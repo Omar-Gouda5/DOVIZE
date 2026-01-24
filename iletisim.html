@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DövizTakip - İletişim</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <img src="logo.png" alt="DövizTakip Logo" class="logo">
+                    <span class="brand-name">DövizTakip</span>
+                </div>
+
+                <nav class="nav-desktop">
+                    <a href="index.html" class="nav-link">BORSA</a>
+                    <a href="doviz.html" class="nav-link">DÖVİZ</a>
+                    <a href="altin.html" class="nav-link">ALTIN</a>
+                    <a href="faizler.html" class="nav-link">FAİZLER</a>
+                    <a href="haberler.html" class="nav-link">HABERLER</a>
+                    <a href="kripto.html" class="nav-link">KRİPTO PARALAR</a>
+                    <a href="iletisim.html" class="nav-link active">İLETİŞİM</a>
+                </nav>
+
+
+                <div class="auth-section">
+                    <a href="login.html" id="loginBtn" class="btn btn-primary">Giriş Yap</a>
+                    <button id="logoutBtn" class="btn btn-outline" style="display: none;">Çıkış</button>
+                    <button class="menu-toggle" id="menuToggle"></button>
+                </div>
+            </div>
+
+            <nav class="nav-mobile" id="mobileNav" style="display: none;">
+                <a href="index.html" class="nav-link">BORSA</a>
+                <a href="doviz.html" class="nav-link">DÖVİZ</a>
+                <a href="altin.html" class="nav-link">ALTIN</a>
+                <a href="faizler.html" class="nav-link">FAİZLER</a>
+                <a href="haberler.html" class="nav-link">HABERLER</a>
+                <a href="kripto.html" class="nav-link">KRİPTO PARALAR</a>
+                <a href="iletisim.html" class="nav-link">İLETİŞİM</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <img src="banner-iletisim.jpg" alt="Financial Market" class="hero-bg">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Bizimle İletişime Geçin</h1>
+                <p>Sorularınız, önerileriniz veya geri bildirimleriniz için buradayız</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <h2>Mesaj Gönderin</h2>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Adınız Soyadınız *</label>
+                            <input type="text" id="name" name="name" required class="form-input">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">E-posta Adresiniz *</label>
+                            <input type="email" id="email" name="email" required class="form-input">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Telefon Numaranız</label>
+                            <input type="tel" id="phone" name="phone" class="form-input">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Konu *</label>
+                            <select id="subject" name="subject" required class="form-input">
+                                <option value="">Lütfen seçiniz</option>
+                                <option value="genel">Genel Bilgi</option>
+                                <option value="destek">Teknik Destek</option>
+                                <option value="oneri">Öneri</option>
+                                <option value="sikayet">Şikayet</option>
+                                <option value="is-birligi">İş Birliği</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Mesajınız *</label>
+                            <textarea id="message" name="message" rows="6" required class="form-input"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">Gönder</button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-info-container">
+                    <h2>İletişim Bilgileri</h2>
+
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon"></div>
+                        <div class="contact-info-content">
+                            <h3>Adres</h3>
+                            <p>Levent Mahallesi, Cömert Sokak No:1A<br>Beşiktaş / İstanbul, Türkiye</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon"></div>
+                        <div class="contact-info-content">
+                            <h3>Telefon</h3>
+                            <p>+90 (212) 345 67 89<br>+90 (555) 123 45 67</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon"></div>
+                        <div class="contact-info-content">
+                            <h3>E-posta</h3>
+                            <p>info@doviztakip.com<br>destek@doviztakip.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon"></div>
+                        <div class="contact-info-content">
+                            <h3>Çalışma Saatleri</h3>
+                            <p>Pazartesi - Cuma: 09:00 - 18:00<br>Cumartesi: 10:00 - 14:00<br>Pazar: Kapalı</p>
+                        </div>
+                    </div>
+
+                    <!-- Social Media -->
+                    <div class="social-media">
+                        <h3>Sosyal Medya</h3>
+                        <div class="social-links">
+                            <a href="#" class="social-link"> Facebook</a>
+                            <a href="#" class="social-link"> Twitter</a>
+                            <a href="#" class="social-link"> Instagram</a>
+                            <a href="#" class="social-link"> LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Section -->
+            <div class="video-section">
+                <h2>DövizTakip Platformu Tanıtımı</h2>
+                <div class="video-container">
+                    <iframe 
+                        width="100%" 
+                        height="500" 
+                        src="https://www.youtube.com/embed/l2MdaHJiDQE" 
+                        title="Borsa ve Döviz Piyasaları" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Image Gallery -->
+            <div class="image-gallery-section">
+                <h2>Ofisimizden Görüntüler</h2>
+                <div class="image-gallery">
+                    <div class="gallery-item">
+                        <img src="crypto-coins.jpg" alt="Cryptocurrency">
+                        <p>Kripto Para Yatırımı</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="trading-floor.jpg" alt="Trading Floor">
+                        <p>Borsa İstanbul İşlem Salonu</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="forex-trading.jpg" alt="Forex Trading">
+                        <p>Forex ve Döviz Piyasaları</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map Section -->
+            <div class="map-section">
+                <h2>Ofis Konumumuz</h2>
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3008.6919739882!2d29.007893315444!3d41.078686679292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab7650656bd63%3A0x8ca058b28c20b6c3!2zTGV2ZW50LCBCZcWfaWt0YcWfL8Swc3RhbmJ1bA!5e0!3m2!1str!2str!4v1234567890123" 
+                        width="100%" 
+                        height="400" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>Hakkında</h4>
+                    <ul>
+                        <li><a href="#">Hakkımızda</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Kariyer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Ürünler</h4>
+                    <ul>
+                        <li><a href="index.html">Borsa</a></li>
+                        <li><a href="doviz.html">Döviz</a></li>
+                        <li><a href="kripto.html">Kripto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Yasal</h4>
+                    <ul>
+                        <li><a href="#">Gizlilik</a></li>
+                        <li><a href="#">Şartlar</a></li>
+                        <li><a href="#">Çerezler</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>İletişim</h4>
+                    <ul>
+                        <li><a href="mailto:info@doviz.com">info@doviz.com</a></li>
+                        <li><a href="tel:+905551234567">+90 555 123 45 67</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DövizTakip. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Tooltip -->
+    <div class="tooltip" id="tooltip"></div>
+
+    <script src="pages.js"></script>
+    <script>
+        // Contact Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

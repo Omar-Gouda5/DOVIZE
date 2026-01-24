@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DövizTakip - Faiz Oranları</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <img src="logo.png" alt="DövizTakip Logo" class="logo">
+                    <span class="brand-name">DövizTakip</span>
+                </div>
+
+                <nav class="nav-desktop">
+                    <a href="index.html" class="nav-link">BORSA</a>
+                    <a href="doviz.html" class="nav-link">DÖVİZ</a>
+                    <a href="altin.html" class="nav-link">ALTIN</a>
+                    <a href="faizler.html" class="nav-link active">FAİZLER</a>
+                    <a href="haberler.html" class="nav-link">HABERLER</a>
+                    <a href="kripto.html" class="nav-link">KRİPTO PARALAR</a>
+                    <a href="iletisim.html" class="nav-link">İLETİŞİM</a>
+                </nav>
+
+
+                <div class="auth-section">
+                    <a href="login.html" id="loginBtn" class="btn btn-primary">Giriş Yap</a>
+                    <button id="logoutBtn" class="btn btn-outline" style="display: none;">Çıkış</button>
+                    <button class="menu-toggle" id="menuToggle"></button>
+                </div>
+            </div>
+
+            <nav class="nav-mobile" id="mobileNav" style="display: none;">
+                <a href="index.html" class="nav-link">BORSA</a>
+                <a href="doviz.html" class="nav-link">DÖVİZ</a>
+                <a href="altin.html" class="nav-link">ALTIN</a>
+                <a href="faizler.html" class="nav-link">FAİZLER</a>
+                <a href="haberler.html" class="nav-link">HABERLER</a>
+                <a href="kripto.html" class="nav-link">KRİPTO PARALAR</a>
+                    <a href="iletisim.html" class="nav-link">İLETİŞİM</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <img src="banner-faizler.jpg" alt="Financial Market" class="hero-bg">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Faiz Oranları</h1>
+                <p>Merkez Bankası ve piyasa faiz oranları</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Overview -->
+    <section class="market-overview">
+        <div class="container">
+            <h2>Güncel Faiz Oranları</h2>
+            <div class="market-grid">
+                <div class="market-card" data-tooltip="POLİTİKA FAİZİ: 50.00% ">
+                    <div class="market-label">POLİTİKA FAİZİ</div>
+                    <div class="market-value">50.00%</div>
+                    <div class="market-change positive">
+                        <span class="arrow">▲</span>
+                        <span>+5.00 (11.11%)</span>
+                    </div>
+                </div>
+
+                <div class="market-card" data-tooltip="MEVDUAT FAİZİ: 45.00% ">
+                    <div class="market-label">MEVDUAT FAİZİ</div>
+                    <div class="market-value">45.00%</div>
+                    <div class="market-change positive">
+                        <span class="arrow">▲</span>
+                        <span>+4.50 (11.11%)</span>
+                    </div>
+                </div>
+
+                <div class="market-card" data-tooltip="KREDİ FAİZİ: 55.00% ">
+                    <div class="market-label">KREDİ FAİZİ</div>
+                    <div class="market-value">55.00%</div>
+                    <div class="market-change positive">
+                        <span class="arrow">▲</span>
+                        <span>+5.50 (11.11%)</span>
+                    </div>
+                </div>
+
+                <div class="market-card" data-tooltip="HAZINE BONOSU: 35.00% ">
+                    <div class="market-label">HAZINE BONOSU</div>
+                    <div class="market-value">35.00%</div>
+                    <div class="market-change negative">
+                        <span class="arrow">▼</span>
+                        <span>-2.00 (-5.41%)</span>
+                    </div>
+                </div>
+
+                <div class="market-card" data-tooltip="DEVLET TAHVİLİ: 40.00% ">
+                    <div class="market-label">DEVLET TAHVİLİ</div>
+                    <div class="market-value">40.00%</div>
+                    <div class="market-change positive">
+                        <span class="arrow">▲</span>
+                        <span>+1.50 (3.90%)</span>
+                    </div>
+                </div>
+
+                <div class="market-card" data-tooltip="ENFLASYON: 61.50% ">
+                    <div class="market-label">ENFLASYON</div>
+                    <div class="market-value">61.50%</div>
+                    <div class="market-change positive">
+                        <span class="arrow">▲</span>
+                        <span>+2.30 (3.89%)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Charts Section -->
+    <section class="charts-section">
+        <div class="container">
+            <h2>Faiz Oranları Karşılaştırması</h2>
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <div>
+                            <h3>Faiz Oranları</h3>
+                            <p>Güncel oranlar</p>
+                        </div>
+                        
+                    </div>
+                    <div class="chart-placeholder" id="faizChart">
+                        <canvas id="faizCanvas"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>Hakkında</h4>
+                    <ul>
+                        <li><a href="#">Hakkımızda</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Kariyer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Ürünler</h4>
+                    <ul>
+                        <li><a href="index.html">Borsa</a></li>
+                        <li><a href="doviz.html">Döviz</a></li>
+                        <li><a href="kripto.html">Kripto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Yasal</h4>
+                    <ul>
+                        <li><a href="#">Gizlilik</a></li>
+                        <li><a href="#">Şartlar</a></li>
+                        <li><a href="#">Çerezler</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>İletişim</h4>
+                    <ul>
+                        <li><a href="mailto:info@doviz.com">info@doviz.com</a></li>
+                        <li><a href="tel:+905551234567">+90 555 123 45 67</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DövizTakip. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Tooltip -->
+    <div class="tooltip" id="tooltip"></div>
+
+    <script src="pages.js"></script>
+</body>
+</html>

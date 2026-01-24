@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DövizTakip - Finansal Piyasa Takip Platformu</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <img src="logo.png" alt="DövizTakip Logo" class="logo">
+                    <span class="brand-name">DövizTakip</span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="nav-desktop">
+                    <a href="index.html" class="nav-link active">BORSA</a>
+                    <a href="doviz.html" class="nav-link">DÖVİZ</a>
+                    <a href="altin.html" class="nav-link">ALTIN</a>
+                    <a href="faizler.html" class="nav-link">FAİZLER</a>
+                    <a href="haberler.html" class="nav-link">HABERLER</a>
+                    <a href="kripto.html" class="nav-link">KRİPTO PARALAR</a>
+                    <a href="iletisim.html" class="nav-link">İLETİŞİM</a>
+                </nav>
+
+                <!-- Search Bar -->
+
+                <!-- Auth Section -->
+                <div class="auth-section">
+                    <a href="login.html" id="loginBtn" class="btn btn-primary">Giriş Yap</a>
+                    <button id="logoutBtn" class="btn btn-outline" style="display: none;">Çıkış</button>
+                    <button class="menu-toggle" id="menuToggle"></button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <nav class="nav-mobile" id="mobileNav" style="display: none;">
+                <a href="index.html" class="nav-link">BORSA</a>
+                <a href="doviz.html" class="nav-link">DÖVİZ</a>
+                <a href="altin.html" class="nav-link">ALTIN</a>
+                <a href="faizler.html" class="nav-link">FAİZLER</a>
+                <a href="haberler.html" class="nav-link">HABERLER</a>
+                <a href="kripto.html" class="nav-link">KRİPTO PARALAR</a>
+                <a href="iletisim.html" class="nav-link">İLETİŞİM</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <img src="banner.jpg" alt="Financial Market" class="hero-bg">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Borsa İstanbul - BIST 100</h1>
+                <p>Gerçek zamanlı veriler ve analitikler ile yatırım kararlarınızı alın</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Overview -->
+    <section class="market-overview">
+        <div class="container">
+            <h2>Piyasa Genel Görünümü</h2>
+            <div class="market-grid">
+                <div class="market-card" data-tooltip="BIST 100: 9161.23 ">
+                    <div class="market-label">BIST 100</div>
+                    <div class="market-value">9161.23</div>
+                    <div class="market-change positive">
+                        <span class="arrow">▲</span>
+                        <span>142.23 (1.58%)</span>
+                    </div>
+                </div>
+
+                <div class="market-card" data-tooltip="DOLAR: 39.03 ">
+                    <div class="market-label">DOLAR</div>
+                    <div class="market-value">39.03</div>
+                    <div class="market-change negative">
+                        <span class="arrow">▼</span>
+                        <span>-0.19 (-0.48%)</span>
+                    </div>
+                </div>
+
+                <div class="market-card" data-tooltip="EURO: 44.40 ">
+                    <div class="market-label">EURO</div>
+                    <div class="market-value">44.40</div>
+                    <div class="market-change negative">
+                        <span class="arrow">▼</span>
+                        <span>-0.20 (-0.46%)</span>
+                    </div>
+                </div>
+
+                <div class="market-card" data-tooltip="ALTIN: 4184.91 ">
+                    <div class="market-label">ALTIN</div>
+                    <div class="market-value">4184.91</div>
+                    <div class="market-change positive">
+                        <span class="arrow">▲</span>
+                        <span>15.40 (0.37%)</span>
+                    </div>
+                </div>
+
+                <div class="market-card" data-tooltip="PETROL: 64.15 ">
+                    <div class="market-label">PETROL</div>
+                    <div class="market-value">64.15</div>
+                    <div class="market-change positive">
+                        <span class="arrow">▲</span>
+                        <span>0.25 (0.40%)</span>
+                    </div>
+                </div>
+
+                <div class="market-card" data-tooltip="BONO: 43.54 ">
+                    <div class="market-label">BONO</div>
+                    <div class="market-value">43.54</div>
+                    <div class="market-change negative">
+                        <span class="arrow">▼</span>
+                        <span>-0.52 (-1.18%)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Charts Section -->
+    <section class="charts-section">
+        <div class="container">
+            <h2>Piyasa Verileri</h2>
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <div>
+                            <h3>BIST 100 Endeksi</h3>
+                            <p>Günlük değişim</p>
+                        </div>
+                    </div>
+                    <div class="chart-with-table">
+                        <div class="chart-placeholder" id="bistChart">
+                            <canvas id="bistCanvas"></canvas>
+                        </div>
+                        <div class="price-table">
+                            <h4>Anlık Veriler</h4>
+                            <table>
+                                <tr><td>Son Fiyat:</td><td class="positive">9,161.23</td></tr>
+                                <tr><td>Değişim:</td><td class="positive">+142.23</td></tr>
+                                <tr><td>Değişim %:</td><td class="positive">+1.58%</td></tr>
+                                <tr><td>Gün En Yüksek:</td><td>9,180.45</td></tr>
+                                <tr><td>Gün En Düşük:</td><td>9,000.12</td></tr>
+                                <tr><td>Hacim:</td><td>85.2M</td></tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <div>
+                            <h3>Dolar/TL Kuru</h3>
+                            <p>Günlük değişim</p>
+                        </div>
+                    </div>
+                    <div class="chart-with-table">
+                        <div class="chart-placeholder" id="usdChart">
+                            <canvas id="usdCanvas"></canvas>
+                        </div>
+                        <div class="price-table">
+                            <h4>Anlık Veriler</h4>
+                            <table>
+                                <tr><td>Alış:</td><td class="negative">39.02</td></tr>
+                                <tr><td>Satış:</td><td class="negative">39.04</td></tr>
+                                <tr><td>Değişim:</td><td class="negative">-0.19</td></tr>
+                                <tr><td>Değişim %:</td><td class="negative">-0.48%</td></tr>
+                                <tr><td>Gün En Yüksek:</td><td>39.25</td></tr>
+                                <tr><td>Gün En Düşük:</td><td>39.00</td></tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Slider -->
+    <section class="news-section">
+        <div class="container">
+            <h2>Son Haberler</h2>
+            <div class="news-slider">
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="news-1-tcmb.png" alt="News Image">
+                    </div>
+                    <div class="news-content">
+                        <p class="news-date" id="newsDate">2025-11-22</p>
+                        <h3 id="newsTitle">Merkez Bankası faiz kararını açıkladı</h3>
+                        <p id="newsDescription">Türkiye Cumhuriyet Merkez Bankası (TCMB), politika faizini 500 baz puan artırarak yüzde 50'ye yükseltti.</p>
+                        <button class="btn btn-primary">Devamını Oku</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slider Controls -->
+            <div class="slider-controls">
+                <button class="btn btn-outline" id="prevBtn">← Önceki</button>
+                <div class="slider-dots" id="sliderDots"></div>
+                <button class="btn btn-outline" id="nextBtn">Sonraki →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cryptocurrencies -->
+    <section class="crypto-section">
+        <div class="container">
+            <h2>Popüler Kripto Paralar</h2>
+            <div class="crypto-grid">
+                <div class="crypto-card">
+                    <div class="crypto-header">
+                        <div>
+                            <p class="crypto-name">Bitcoin</p>
+                            <p class="crypto-symbol">BTC</p>
+                        </div>
+                        <div class="crypto-price">
+                            <p class="price">$105000</p>
+                            <p class="change positive">+2.5%</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="crypto-card">
+                    <div class="crypto-header">
+                        <div>
+                            <p class="crypto-name">Ethereum</p>
+                            <p class="crypto-symbol">ETH</p>
+                        </div>
+                        <div class="crypto-price">
+                            <p class="price">$3500</p>
+                            <p class="change positive">+1.8%</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="crypto-card">
+                    <div class="crypto-header">
+                        <div>
+                            <p class="crypto-name">Ripple</p>
+                            <p class="crypto-symbol">XRP</p>
+                        </div>
+                        <div class="crypto-price">
+                            <p class="price">$2.50</p>
+                            <p class="change negative">-0.5%</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="crypto-card">
+                    <div class="crypto-header">
+                        <div>
+                            <p class="crypto-name">Cardano</p>
+                            <p class="crypto-symbol">ADA</p>
+                        </div>
+                        <div class="crypto-price">
+                            <p class="price">$1.20</p>
+                            <p class="change positive">+3.2%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>Hakkında</h4>
+                    <ul>
+                        <li><a href="#">Hakkımızda</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Kariyer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Ürünler</h4>
+                    <ul>
+                        <li><a href="index.html">Borsa</a></li>
+                        <li><a href="doviz.html">Döviz</a></li>
+                        <li><a href="kripto.html">Kripto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Yasal</h4>
+                    <ul>
+                        <li><a href="#">Gizlilik</a></li>
+                        <li><a href="#">Şartlar</a></li>
+                        <li><a href="#">Çerezler</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>İletişim</h4>
+                    <ul>
+                        <li><a href="mailto:info@doviz.com">info@doviz.com</a></li>
+                        <li><a href="tel:+905551234567">+90 555 123 45 67</a></li>
+                        <li><a href="iletisim.html">İletişim Formu</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DövizTakip. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Tooltip -->
+    <div class="tooltip" id="tooltip"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

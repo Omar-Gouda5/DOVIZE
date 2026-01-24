@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DövizTakip - Haberler</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 32px;
+            margin-top: 40px;
+        }
+
+        .news-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .news-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-8px);
+        }
+
+        .news-card-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .news-card-content {
+            padding: 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .news-card-category {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            align-self: flex-start;
+        }
+
+        .news-card-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .news-card-description {
+            font-size: 15px;
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 16px;
+            flex: 1;
+        }
+
+        .news-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+        }
+
+        .news-card-date {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        .news-card-read-more {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .news-card:hover .news-card-read-more {
+            gap: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .news-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <img src="logo.png" alt="DövizTakip Logo" class="logo">
+                    <span class="brand-name">DövizTakip</span>
+                </div>
+
+                <nav class="nav-desktop">
+                    <a href="index.html" class="nav-link">BORSA</a>
+                    <a href="doviz.html" class="nav-link">DÖVİZ</a>
+                    <a href="altin.html" class="nav-link">ALTIN</a>
+                    <a href="faizler.html" class="nav-link">FAİZLER</a>
+                    <a href="haberler.html" class="nav-link active">HABERLER</a>
+                    <a href="kripto.html" class="nav-link">KRİPTO PARALAR</a>
+                    <a href="iletisim.html" class="nav-link">İLETİŞİM</a>
+                </nav>
+
+                <div class="auth-section">
+                    <a href="login.html" id="loginBtn" class="btn btn-primary">Giriş Yap</a>
+                    <button id="logoutBtn" class="btn btn-outline" style="display: none;">Çıkış</button>
+                    <button class="menu-toggle" id="menuToggle"></button>
+                </div>
+            </div>
+
+            <nav class="nav-mobile" id="mobileNav" style="display: none;">
+                <a href="index.html" class="nav-link">BORSA</a>
+                <a href="doviz.html" class="nav-link">DÖVİZ</a>
+                <a href="altin.html" class="nav-link">ALTIN</a>
+                <a href="faizler.html" class="nav-link">FAİZLER</a>
+                <a href="haberler.html" class="nav-link">HABERLER</a>
+                <a href="kripto.html" class="nav-link">KRİPTO PARALAR</a>
+                <a href="iletisim.html" class="nav-link">İLETİŞİM</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <img src="banner-haberler.jpg" alt="Financial Market" class="hero-bg">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Son Haberler</h1>
+                <p>Finans dünyasından en güncel haberler ve analizler</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Grid -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Güncel Haberler</h2>
+            
+            <div class="news-grid">
+                <!-- News 1: TCMB -->
+                <a href="news-1.html" class="news-card">
+                    <img src="news-1-tcmb.png" alt="TCMB Faiz Kararı" class="news-card-image">
+                    <div class="news-card-content">
+                        <span class="news-card-category">Ekonomi</span>
+                        <h3 class="news-card-title">Merkez Bankası faiz kararını açıkladı</h3>
+                        <p class="news-card-description">Türkiye Cumhuriyet Merkez Bankası (TCMB), politika faizini 500 baz puan artırarak yüzde 50'ye yükseltti. Bu karar, piyasa beklentilerinin üzerinde gerçekleşti.</p>
+                        <div class="news-card-footer">
+                            <span class="news-card-date">22 Kasım 2025</span>
+                            <span class="news-card-read-more">Devamını Oku →</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- News 2: Bitcoin -->
+                <a href="news-2.html" class="news-card">
+                    <img src="news-2-bitcoin.jpg" alt="Bitcoin Rekor" class="news-card-image">
+                    <div class="news-card-content">
+                        <span class="news-card-category">Kripto Para</span>
+                        <h3 class="news-card-title">Bitcoin 105 bin doları aştı</h3>
+                        <p class="news-card-description">ABD'den gelmesi beklenen ve kripto paralara yönelik olumlu görülen düzenlemeler sonrası Bitcoin rekor kırdı ve 105 bin dolar seviyesini aştı.</p>
+                        <div class="news-card-footer">
+                            <span class="news-card-date">21 Kasım 2025</span>
+                            <span class="news-card-read-more">Devamını Oku →</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- News 3: BIST -->
+                <a href="news-3.html" class="news-card">
+                    <img src="news-3-bist.jpg" alt="Borsa İstanbul" class="news-card-image">
+                    <div class="news-card-content">
+                        <span class="news-card-category">Borsa</span>
+                        <h3 class="news-card-title">Borsa İstanbul günü düşüşle kapattı</h3>
+                        <p class="news-card-description">BIST 100 endeksi, günü yüzde 1,65 düşüşle 9.019 puandan tamamladı. Küresel piyasalardaki belirsizlikler etkili oldu.</p>
+                        <div class="news-card-footer">
+                            <span class="news-card-date">20 Kasım 2025</span>
+                            <span class="news-card-read-more">Devamını Oku →</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- News 4: Gold -->
+                <a href="news-4.html" class="news-card">
+                    <img src="news-4-altin.jpg" alt="Altın Fiyatları" class="news-card-image">
+                    <div class="news-card-content">
+                        <span class="news-card-category">Altın & Emtia</span>
+                        <h3 class="news-card-title">Altın fiyatları yükselişte</h3>
+                        <p class="news-card-description">Gram altın, günü yüzde 0,50 artışla 4.169,51 TL seviyesinden kapattı. Küresel belirsizlikler altın talebini artırıyor.</p>
+                        <div class="news-card-footer">
+                            <span class="news-card-date">19 Kasım 2025</span>
+                            <span class="news-card-read-more">Devamını Oku →</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- News 5: Forex -->
+                <a href="news-5.html" class="news-card">
+                    <img src="news-5-forex.jpg" alt="Dolar/TL Kurunda Hareketlilik" class="news-card-image">
+                    <div class="news-card-content">
+                        <span class="news-card-category">Döviz Piyasası</span>
+                        <h3 class="news-card-title">Dolar/TL kurunda hareketlilik</h3>
+                        <p class="news-card-description">Forex piyasasında Türk Lirası karşısında Dolar yüzde 0,75 değer kazandı. Merkez Bankası açıklamaları piyasaları etkiledi.</p>
+                        <div class="news-card-footer">
+                            <span class="news-card-date">18 Kasım 2025</span>
+                            <span class="news-card-read-more">Devamını Oku →</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- News 6: Energy -->
+                <a href="news-6.html" class="news-card">
+                    <img src="news-6-energy.jpg" alt="Petrol Fiyatları Yükselişe Geçti" class="news-card-image">
+                    <div class="news-card-content">
+                        <span class="news-card-category">Enerji Piyasası</span>
+                        <h3 class="news-card-title">Petrol fiyatları yükselişe geçti</h3>
+                        <p class="news-card-description">Enerji piyasasında petrol fiyatları, Ortadoğu'daki gelişmeler nedeniyle yüzde 2,5 artış gösterdi. Brent petrol 75 doları aştı.</p>
+                        <div class="news-card-footer">
+                            <span class="news-card-date">17 Kasım 2025</span>
+                            <span class="news-card-read-more">Devamını Oku →</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>Hakkında</h4>
+                    <ul>
+                        <li><a href="#">Hakkımızda</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Kariyer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Ürünler</h4>
+                    <ul>
+                        <li><a href="index.html">Borsa</a></li>
+                        <li><a href="doviz.html">Döviz</a></li>
+                        <li><a href="kripto.html">Kripto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Yasal</h4>
+                    <ul>
+                        <li><a href="#">Gizlilik</a></li>
+                        <li><a href="#">Şartlar</a></li>
+                        <li><a href="#">Çerezler</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>İletişim</h4>
+                    <ul>
+                        <li><a href="mailto:info@doviz.com">info@doviz.com</a></li>
+                        <li><a href="tel:+905551234567">+90 555 123 45 67</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DövizTakip. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="pages.js"></script>
+</body>
+</html>

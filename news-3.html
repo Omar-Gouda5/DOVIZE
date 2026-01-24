@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borsa İstanbul günü düşüşle kapattı - DövizTakip</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .news-detail-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .news-detail-header {
+            margin-bottom: 30px;
+        }
+
+        .news-detail-header h1 {
+            font-size: 36px;
+            color: var(--primary);
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+
+        .news-meta {
+            display: flex;
+            gap: 20px;
+            color: var(--text-light);
+            font-size: 14px;
+            margin-bottom: 24px;
+        }
+
+        .news-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .news-featured-image {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin-bottom: 32px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .news-content {
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--text-dark);
+        }
+
+        .news-content p {
+            margin-bottom: 20px;
+        }
+
+        .news-content h2 {
+            font-size: 28px;
+            color: var(--primary);
+            margin: 32px 0 16px;
+        }
+
+        .news-content h3 {
+            font-size: 22px;
+            color: var(--primary);
+            margin: 24px 0 12px;
+        }
+
+        .news-highlight {
+            background: var(--bg-light);
+            border-left: 4px solid var(--primary);
+            padding: 20px;
+            margin: 24px 0;
+            border-radius: 8px;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 24px;
+            transition: var(--transition);
+        }
+
+        .back-button:hover {
+            gap: 12px;
+        }
+
+        .related-news {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 2px solid var(--border);
+        }
+
+        .related-news h3 {
+            font-size: 24px;
+            color: var(--primary);
+            margin-bottom: 24px;
+        }
+
+        .related-news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+
+        .related-news-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: var(--transition);
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .related-news-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-4px);
+        }
+
+        .related-news-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .related-news-card-content {
+            padding: 16px;
+        }
+
+        .related-news-card h4 {
+            font-size: 16px;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .related-news-card p {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <img src="logo.png" alt="DövizTakip Logo" class="logo">
+                    <span class="brand-name">DövizTakip</span>
+                </div>
+
+                <nav class="nav-desktop">
+                    <a href="index.html" class="nav-link">BORSA</a>
+                    <a href="doviz.html" class="nav-link">DÖVİZ</a>
+                    <a href="altin.html" class="nav-link">ALTIN</a>
+                    <a href="faizler.html" class="nav-link">FAİZLER</a>
+                    <a href="haberler.html" class="nav-link active">HABERLER</a>
+                    <a href="kripto.html" class="nav-link">KRİPTO PARALAR</a>
+                    <a href="iletisim.html" class="nav-link">İLETİŞİM</a>
+                </nav>
+
+                <div class="auth-section">
+                    <a href="login.html" id="loginBtn" class="btn btn-primary">Giriş Yap</a>
+                    <button id="logoutBtn" class="btn btn-outline" style="display: none;">Çıkış</button>
+                    <button class="menu-toggle" id="menuToggle"></button>
+                </div>
+            </div>
+
+            <nav class="nav-mobile" id="mobileNav" style="display: none;">
+                <a href="index.html" class="nav-link">BORSA</a>
+                <a href="doviz.html" class="nav-link">DÖVİZ</a>
+                <a href="altin.html" class="nav-link">ALTIN</a>
+                <a href="faizler.html" class="nav-link">FAİZLER</a>
+                <a href="haberler.html" class="nav-link">HABERLER</a>
+                <a href="kripto.html" class="nav-link">KRİPTO PARALAR</a>
+                <a href="iletisim.html" class="nav-link">İLETİŞİM</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- News Detail Content -->
+    <div class="news-detail-container">
+        <a href="haberler.html" class="back-button">← Haberlere Dön</a>
+
+        <article class="news-detail-header">
+            <h1>Borsa İstanbul günü düşüşle kapattı</h1>
+            <div class="news-meta">
+                <span class="news-meta-item">20 Kasım 2025</span>
+                <span class="news-meta-item">Borsa</span>
+                <span class="news-meta-item">3 dakika okuma</span>
+            </div>
+        </article>
+
+        <img src="news-3-bist.jpg" alt="Borsa İstanbul" class="news-featured-image">
+
+        <div class="news-content">
+            <p>Borsa İstanbul'da işlem gören BIST 100 endeksi, günü yüzde 1,65 düşüşle 9.019 puandan tamamladı. Endeks, gün içinde 9.200 seviyesine kadar yükselse de, satış baskısıyla kapanışa doğru geriledi.</p>
+
+            <div class="news-highlight">
+                <strong>Kapanış Verileri:</strong> BIST 100: 9.019 puan (-1,65%) | İşlem Hacmi: 85,2 milyar TL
+            </div>
+
+            <h2>Piyasa Analizi</h2>
+            <p>Analistler, BIST 100'deki düşüşün küresel piyasalardaki belirsizliklerden kaynaklandığını belirtiyor. Özellikle ABD borsalarındaki gerileme ve dolar/TL kurundaki dalgalanmalar, yerli yatırımcıları temkinli davranmaya itti.</p>
+
+            <h3>Sektörel Performans</h3>
+            <p>Bankacılık endeksi yüzde 2,1 düşerken, holding endeksi yüzde 1,8 geriledi. Teknoloji hisseleri ise yüzde 0,5'lik sınırlı bir düşüş gösterdi.</p>
+
+            <p>En çok değer kaybeden hisseler arasında banka hisseleri öne çıkarken, bazı sanayi şirketleri günü yükselişle tamamladı.</p>
+
+            <h2>Uzman Görüşleri</h2>
+            <p>Piyasa uzmanları, kısa vadede BIST 100'ün 9.000 destek seviyesini test edebileceğini, ancak orta vadede toparlanma beklentisinin güçlü olduğunu ifade ediyor.</p>
+        </div>
+
+        <!-- Related News -->
+        <div class="related-news">
+            <h3>İlgili Haberler</h3>
+            <div class="related-news-grid">
+                <a href="news-1.html" class="related-news-card">
+                    <img src="news-1-tcmb.png" alt="TCMB">
+                    <div class="related-news-card-content">
+                        <h4>Merkez Bankası faiz kararını açıkladı</h4>
+                        <p>Politika faizi yüzde 50'ye yükseldi</p>
+                    </div>
+                </a>
+                <a href="news-2.html" class="related-news-card">
+                    <img src="news-2-bitcoin.jpg" alt="Bitcoin">
+                    <div class="related-news-card-content">
+                        <h4>Bitcoin 105 bin doları aştı</h4>
+                        <p>Kripto para piyasasında tarihi rekor</p>
+                    </div>
+                </a>
+                <a href="news-4.html" class="related-news-card">
+                    <img src="news-4-altin.jpg" alt="Altın">
+                    <div class="related-news-card-content">
+                        <h4>Altın fiyatları yükselişte</h4>
+                        <p>Gram altın 4.169 TL seviyesinde</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>Hakkında</h4>
+                    <ul>
+                        <li><a href="#">Hakkımızda</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Kariyer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Ürünler</h4>
+                    <ul>
+                        <li><a href="index.html">Borsa</a></li>
+                        <li><a href="doviz.html">Döviz</a></li>
+                        <li><a href="kripto.html">Kripto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Yasal</h4>
+                    <ul>
+                        <li><a href="#">Gizlilik</a></li>
+                        <li><a href="#">Şartlar</a></li>
+                        <li><a href="#">Çerezler</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>İletişim</h4>
+                    <ul>
+                        <li><a href="mailto:info@doviz.com">info@doviz.com</a></li>
+                        <li><a href="tel:+905551234567">+90 555 123 45 67</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DövizTakip. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="pages.js"></script>
+</body>
+</html>
