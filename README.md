@@ -31,4 +31,4 @@ Open http://localhost:8000/index.html. Internet access is needed for externally 
 
 Market figures and news are demonstration content, not a live market feed. The login state uses browser storage; it is a UI prototype, not secure server-side authentication. Search currently displays a placeholder message. No backend or persistent database is included.
 
-This frontend project is separate from [the Laravel currency application](https://github.com/nanafi23/doviz-takibi).
+This frontend project is separate from [the Laravel currency application](https://github.com/Omar-Gouda5/doviz-takibi).
